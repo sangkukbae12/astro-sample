@@ -1,0 +1,44 @@
+.wrapper {
+  margin-bottom: 2rem;
+}
+
+.wrapperExpanded .content {
+  display: block;
+}
+
+.heading {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.heading button {
+  background-color: inherit;
+  border: inherit;
+  color: inherit;
+  display: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: inherit;
+  padding: inherit;
+  text-align: inherit;
+}
+
+.heading button:hover {
+  cursor: pointer;
+}
+
+.heading button span:first-child {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.content {
+  display: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.source {
+  font-size: 0.75rem;
+}
