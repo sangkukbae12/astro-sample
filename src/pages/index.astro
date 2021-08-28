@@ -1,0 +1,53 @@
+---
+// Component Imports
+// You can import components from any supported Framework here!
+import Header from '../components/Header.svelte'
+import List from '../components/List.jsx';
+
+const dataURL = 'http://localhost:3000/fun-facts.json'
+const response = await fetch(dataURL);
+const data = await response.json();
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Rocket Fun Facts';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{title}</title>
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/style/global.css">
+    <link rel="stylesheet" href="/style/home.css">
+
+    <style>
+        {
+          margin: 0 auto;
+          max-width: 42rem;
+        }
+    </style>
+</head>
+<body>
+    <Header />
+    <main>
+
+        <!--
+          - You can also use imported framework components directly in your markup!
+          -
+          - Note: by default, these components are NOT interactive on the client.
+          - The `:visible` directive tells Astro to make it interactive.
+          -
+          - See https://docs.astro.build/core-concepts/component-hydration/ 
+          -->
+          <List facts={data} client:visible />
+    </main>
+</body>
+</html>
